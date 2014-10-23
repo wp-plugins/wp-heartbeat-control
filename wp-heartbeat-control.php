@@ -95,14 +95,14 @@ function wp_heartbeat_control_func()
 				</p>
 				<p class='<?php echo ('post' == $wphc_radio)?"checked":""; ?>'>
 					<input <?php echo (!$wphc_active)?"disabled='disabled'":""; ?> type='radio' name='wphc_radio' id='post' value='post' <?php checked('post',$wphc_radio); ?> />
-					<label for="post">Disable everywhere except for post editor</label> <?php echo (!$wphc_active)?"<a href='#wphc_activation_anchor'>Unlock Option</a>":""; ?> 
+					<label for="post">Disable everywhere except for post editor</label> <?php echo (!$wphc_active)?"<a href='#wphc_activation_anchor'>Unlock (it's Free!)</a>":""; ?> 
 				</p>
 				<p class='<?php echo ('intval' == $wphc_radio)?"checked":""; ?>'>
 					<input <?php echo (!$wphc_active)?"disabled='disabled'":""; ?> type='radio' name='wphc_radio' id='intval' value='intval' <?php checked('intval',$wphc_radio); ?> />
-					<label for="intval">Change Heartbeat Interval to <input <?php echo (!$wphc_active)?"disabled='disabled'":""; ?>  type='number' name='wphc_seconds' value='<?php echo $wphc_seconds; ?>' style='width:50px;' /> Seconds (Default is 15 Seconds)</label> <?php echo (!$wphc_active)?"<a href='#wphc_activation_anchor'>Unlock Option</a>":""; ?> 
+					<label for="intval">Change Heartbeat Interval to <input <?php echo (!$wphc_active)?"disabled='disabled'":""; ?>  type='number' name='wphc_seconds' value='<?php echo $wphc_seconds; ?>' style='width:50px;' /> Seconds (Default is 15 Seconds)</label> <?php echo (!$wphc_active)?"<a href='#wphc_activation_anchor'>Unlock (it's Free!)</a>":""; ?> 
 				</p>
 				<p>
-					<label for="users">Apply above settings to following user roles only.</label><br>
+					<label for="users">Apply above settings to following user roles only. (Use Cntrl+Click to select multiple user roles)</label><br>
 					<select multiple name='wphc_roles[]' style="height: 180px;" >
 						<option <?php if(in_array('all',$wphc_roles))
 								echo "selected='selected'";
@@ -147,7 +147,7 @@ function wp_heartbeat_control_func()
 			
 			<?php if(!$wphc_active) { ?>
 			<div id='wphc_activation'>
-				<h2>Signup to unlock plugin</h2>
+				<h2>Signup to unlock (it's Free!)</h2>
 				<p>&nbsp;</p>
 				<form action='http://mindstien.com/pro-plugins/activation.php' method='post' target='_blank'>
 					<input type='hidden' name='verification' value='gLpu%A1C738le1zY@3yQ'>
