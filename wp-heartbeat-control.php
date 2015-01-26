@@ -2,7 +2,7 @@
 /*
   Plugin Name: WP Heartbeat Control
   Plugin URI: http://www.mindstien.com/
-  Version: 1.0
+  Version: 1.1
   Author: Mindstien Technologies
   Author URI: http://www.mindstien.com/
   Description: To control Wordpress Heartbeat API to reduce load on CPU. Useful for heavy traffic site on shared or poor hosting platform and for who is facing CPU Usage issues from their host.
@@ -28,7 +28,6 @@ function wphc_process_options()
 		
 		$wphc_options = array(
 						"wphc_radio"=>"none",
-						"license"=>"",
 						"wphc_seconds"=>60,
 						"wphc_roles"=>array("all")
 					);
@@ -39,8 +38,7 @@ function wphc_process_options()
 		$wphc_options = array(
 						"wphc_radio"=>$_POST['wphc_radio'],
 						"wphc_seconds"=>intval($_POST['wphc_seconds']),
-						"wphc_roles"=>$_POST['wphc_roles'],
-						"license"=>trim($_POST['license'])
+						"wphc_roles"=>$_POST['wphc_roles']
 					);
 		update_option("wphc_options",$wphc_options);
 		
@@ -120,6 +118,7 @@ function wp_heartbeat_control_func()
 					?>
 					</select>
 				</p>
+				<?php /*
 				<p>
 					<label for='license'>Unlock Code:</label>
 					<input type='text' name='license' value='<?php echo $license; ?>' />
@@ -131,7 +130,7 @@ function wp_heartbeat_control_func()
 						else
 							echo "<span class='description' style='color:red;'>Invalid activation code.</span>";
 					?>
-				</p>
+				</p> */ ?>
 				
 				<p>
 					<input type='submit' name='wphc_submit' value='Save Options' class='button-primary' />
@@ -259,6 +258,7 @@ function wphc_is_role_allowed()
 
 function wphc_is_activated()
 {
+	/*
 	global $wphc_options;
 	if(isset($wphc_options['license']) AND strlen($wphc_options['license'])==53)
 	{
@@ -274,4 +274,6 @@ function wphc_is_activated()
 		return false;
 	}
 	return false;
+	*/
+	return true;
 }
